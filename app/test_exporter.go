@@ -2,12 +2,11 @@ package main
 import (
     "fmt"
     "net/http"
+    "log"
 )
 type Counter struct{
     count int64
 }
-
-
 
 var counter  = new(Counter)
 
@@ -26,8 +25,9 @@ func HelloHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main () {
-    http.HandleFunc("/metrics", MetricsHandler)
-    http.HandleFunc("/", HelloHandler)
+    http.HandleFunc("/", MetricsHandler)
+    http.HandleFunc("/hello", HelloHandler)
+    log.Print("Start webserver..")
     http.ListenAndServe(":8000", nil)
 }
 
