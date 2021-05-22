@@ -4,7 +4,6 @@ metadata:
   name: node-exporter-example-monitor
   labels:
     k8s-app: prometheus
-  namespace: node-exporter-example
 spec:
   endpoints:
     - interval: 15s
