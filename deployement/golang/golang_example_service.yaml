@@ -5,8 +5,8 @@ metadata:
   name: go-web
   app: go-web
 spec:
-  matchLabels:
-    app: go-web
+  selector:
+    run: go-web
   ports:
     - protocol: TCP
       port: 8000
