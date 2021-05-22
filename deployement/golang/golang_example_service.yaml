@@ -5,7 +5,7 @@ metadata:
   name: go-web
   app: go-web
 spec:
-  selector:
+  matchLabels:
     app: go-web
   ports:
     - protocol: TCP

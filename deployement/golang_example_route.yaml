@@ -4,6 +4,8 @@ kind: Route
 metadata:
   name: go-web
 spec:
+  matchLabels:
+    app: go-web
   to:
     kind: Service
     name: go-web
