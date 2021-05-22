@@ -20,25 +20,3 @@ spec:
         image: quay.io/hazel_shen/go_exporter_example:v2
         ports:
         - containerPort: 8000
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: node-exporter-service
-  namespace: node-exporter-example
-spec:
-  selector:
-    app: go-web
-  ports:
-    - protocol: TCP
-      port: 8000
-      targetPort: 8000
----
-apiVersion: v1
-kind: Route
-metadata:
-  name: go-web-route
-spec:
-  to:
-    kind: Service
-    name: node-exporter-service
