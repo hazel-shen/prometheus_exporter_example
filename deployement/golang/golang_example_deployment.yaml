@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: go-web-exporter-deployment
+  name: go-web-exporter
   labels:
     app: go-web
 spec:
